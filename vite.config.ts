@@ -5,8 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Uncomment and replace 'Portfolio' with your actual GitHub repository name if it's a project site
-    // base: '/Portfolio/',
+    base: '/portfolio/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
