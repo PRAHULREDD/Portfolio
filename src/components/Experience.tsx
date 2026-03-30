@@ -7,7 +7,7 @@ export default function Experience() {
       logo: 'RM',
       logoColor: 'bg-teal-500/20 text-teal-500',
       role: 'AI / ML Intern',
-      duration: 'Oct 2025 – Dec 2025 · 3 months · Thiruvananthapuram, Kerala',
+      duration: 'Oct 2025 – Dec 2025 · 2 months · Thiruvananthapuram, Kerala',
       tags: ['Python', 'Pandas', 'NumPy', 'Machine Learning', 'Healthcare AI', 'EDA'],
       bullets: [
         'Developed AI-driven features for a healthcare platform using Python, Pandas, and NumPy within an agile workflow.',
@@ -20,7 +20,7 @@ export default function Experience() {
       logo: 'PS',
       logoColor: 'bg-primary/20 text-primary',
       role: 'AI / ML Intern',
-      duration: 'Jul 2025 – Oct 2025 · 4 months · Hyderabad, India',
+      duration: 'Jul 2025 – Oct 2025 · 3 months · Hyderabad, India',
       tags: ['Python', 'YOLO', 'FaceNet', 'SCRFD', 'ONNX', 'Hailo-8L', 'Raspberry Pi 5', 'OpenCV', 'WebSocket'],
       metrics: [
         { label: '93% Face Recog. Accuracy' },
@@ -60,7 +60,7 @@ export default function Experience() {
             transition={{ delay: 0.1 }}
             className="text-primary font-medium font-body pl-5"
           >
-            6 months · 2 internships · Production systems shipped
+            5 months · 2 internships · Production systems shipped
           </motion.p>
         </div>
         

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ onOpenResume }: { onOpenResume: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -78,15 +78,17 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <motion.a
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-black px-5 py-2 rounded-md font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all"
-            href="/resume.pdf"
-            download="P_Rahul_Reddy_Resume.pdf"
+            className="bg-primary text-black px-5 py-2 rounded-md font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenResume();
+            }}
           >
             Resume
-          </motion.a>
+          </motion.button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -120,14 +122,15 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a
-                className="bg-primary text-black px-5 py-3 rounded-md font-bold text-center uppercase tracking-widest"
-                href="/resume.pdf"
-                download="P_Rahul_Reddy_Resume.pdf"
-                onClick={() => setIsOpen(false)}
+              <button
+                className="bg-primary text-black px-5 py-3 rounded-md font-bold text-center uppercase tracking-widest cursor-pointer w-full"
+                onClick={() => {
+                  setIsOpen(false);
+                  onOpenResume();
+                }}
               >
                 Resume
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

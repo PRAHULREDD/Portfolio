@@ -12,16 +12,20 @@ import Experience from './components/Experience';
 import EducationCertifications from './components/EducationCertifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ResumeModal from './components/ResumeModal';
+import { useState } from 'react';
 
 import { motion } from 'motion/react';
 import { Mail } from 'lucide-react';
 
 export default function App() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <div className="min-h-screen relative">
-      <Navbar />
+      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
       <main>
-        <Hero />
+        <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <About />
         <Skills />
         <Projects />
@@ -47,6 +51,8 @@ export default function App() {
           Let's connect
         </div>
       </motion.a>
+
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </div>
   );
 }

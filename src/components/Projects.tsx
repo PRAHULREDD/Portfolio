@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ExternalLink, Github, Monitor, Cpu, Activity } from 'lucide-react';
+import { ExternalLink, Github, Monitor, Cpu, Activity, Lock } from 'lucide-react';
 
 export default function Projects() {
   const featuredStack = ['Python', 'FastAPI', 'React', 'SVM', 'TF-IDF', 'SMOTE', 'Scikit-learn', 'Vercel'];
@@ -118,9 +118,14 @@ export default function Projects() {
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Monitor className="w-6 h-6 text-primary" />
                 </div>
-                <span className="px-3 py-1 bg-slate-900 text-slate-500 text-[10px] font-bold uppercase tracking-widest rounded border border-white/5">
-                  Internship · Pipra Solutions
-                </span>
+                <div className="flex flex-col items-end gap-2">
+                  <span className="px-3 py-1 bg-slate-900 text-slate-500 text-[10px] font-bold uppercase tracking-widest rounded border border-white/5">
+                    Internship · Pipra Solutions
+                  </span>
+                  <span className="px-2 py-0.5 bg-slate-800 text-slate-400 text-[9px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1">
+                    <Lock className="w-2.5 h-2.5" /> Confidential / NDA
+                  </span>
+                </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-2 font-headline">Real-Time Face Recognition System</h3>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -151,9 +156,14 @@ export default function Projects() {
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Cpu className="w-6 h-6 text-primary" />
                 </div>
-                <span className="px-3 py-1 bg-slate-900 text-slate-500 text-[10px] font-bold uppercase tracking-widest rounded border border-white/5">
-                  Internship · Pipra Solutions
-                </span>
+                <div className="flex flex-col items-end gap-2">
+                  <span className="px-3 py-1 bg-slate-900 text-slate-500 text-[10px] font-bold uppercase tracking-widest rounded border border-white/5">
+                    Internship · Pipra Solutions
+                  </span>
+                  <span className="px-2 py-0.5 bg-slate-800 text-slate-400 text-[9px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1">
+                    <Lock className="w-2.5 h-2.5" /> Confidential / NDA
+                  </span>
+                </div>
               </div>
               <h3 className="text-xl font-bold text-white mb-2 font-headline">Edge AI Object Detection System</h3>
               <div className="flex flex-wrap gap-2 mb-4">

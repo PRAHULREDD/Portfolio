@@ -4,7 +4,7 @@ export default function About() {
   const stats = [
     { value: '93%', label: 'Face Recog Accuracy' },
     { value: '98.7%', label: 'Fraud Detection' },
-    { value: '6 Mo.', label: 'Industry Experience' },
+    { value: '5 Mo.', label: 'Industry Experience' },
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function About() {
               I am an Edge AI and Computer Vision specialist — one of the few undergraduates to deploy production deep learning models on resource-constrained hardware (Raspberry Pi 5 + Hailo-8L).
             </p>
             <p>
-              With 6 months of industry internship experience, I've engineered real-time face recognition pipelines with 93% accuracy and NLP-based fraud detection systems with 98.7% accuracy. I am experienced across the full ML lifecycle: from data preprocessing and model training to REST API deployment and full-stack AI application delivery.
+              With 5 months of industry internship experience, I've engineered real-time face recognition pipelines with 93% accuracy and NLP-based fraud detection systems with 98.7% accuracy. I am experienced across the full ML lifecycle: from data preprocessing and model training to REST API deployment and full-stack AI application delivery.
             </p>
           </div>
           

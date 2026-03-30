@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink, FileText, Globe } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
   const metrics = [
     { value: '98.7% Accuracy', label: 'Fraud Detection · Live' },
     { value: '93% Accuracy', label: 'Face Recognition · 6m range' },
@@ -48,7 +48,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
             </span>
-            Available for Work · Open to Relocation
+            Seeking Full-Time Roles · Open to Relocation
           </div>
           
           <div className="space-y-4 w-full">
@@ -93,16 +93,18 @@ export default function Hero() {
               View Live Project
               <ExternalLink className="w-5 h-5" />
             </motion.a>
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="border border-white hover:border-primary hover:text-primary text-white px-8 py-4 rounded-md font-bold transition-all bg-transparent flex items-center justify-center gap-2 flex-1 md:flex-none"
-              href="/resume.pdf"
-              download="P_Rahul_Reddy_Resume.pdf"
+              className="border border-white hover:border-primary hover:text-primary text-white px-8 py-4 rounded-md font-bold transition-all bg-transparent flex items-center justify-center gap-2 flex-1 md:flex-none cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenResume();
+              }}
             >
-              Download Resume
+              View Resume
               <FileText className="w-5 h-5" />
-            </motion.a>
+            </motion.button>
           </div>
           
           {/* Social Row */}
