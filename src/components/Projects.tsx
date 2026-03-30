@@ -85,22 +85,26 @@ export default function Projects() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <a 
+                <motion.a 
+                  whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(34, 197, 94, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://fraud-job-detection-ml.vercel.app" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-primary text-black px-6 py-3 rounded-md font-bold flex items-center gap-2 hover:brightness-110 transition-all text-sm"
                 >
                   Live Demo <ExternalLink className="w-4 h-4" />
-                </a>
-                <a 
+                </motion.a>
+                <motion.a 
+                  whileHover={{ y: -3, backgroundColor: "rgba(34, 197, 94, 0.1)" }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://github.com/PRAHULREDD/fraud-job-detection-ml" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="border border-white/20 text-white px-6 py-3 rounded-md font-bold flex items-center gap-2 hover:border-primary hover:text-primary transition-all text-sm"
                 >
                   GitHub <Github className="w-4 h-4" />
-                </a>
+                </motion.a>
               </div>
             </div>
           </motion.div>

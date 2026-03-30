@@ -4,7 +4,8 @@ export default function About() {
   const stats = [
     { value: '93%', label: 'Face Recog Accuracy' },
     { value: '98.7%', label: 'Fraud Detection' },
-    { value: '2', label: 'Internships Completed' },
+    { value: '5 Mo.', label: 'Industry Experience' },
+    { value: '200+', label: 'LeetCode Solved' },
   ];
 
   return (
@@ -30,7 +31,7 @@ export default function About() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-2 gap-6 mt-12">
             {stats.map((stat, index) => (
               <motion.div 
                 key={index}
@@ -54,9 +55,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="lg:col-span-5"
         >
-          <div className="aspect-square bg-surface rounded-lg vision-scan relative overflow-hidden group border border-outline/20 shadow-2xl">
+          <div className="aspect-square bg-slate-800 rounded-lg vision-scan relative overflow-hidden group border border-outline/20 shadow-2xl">
+            <div className="absolute inset-0 bg-slate-800 animate-pulse z-0" />
             <img 
-              className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+              className="relative z-10 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxo5gNUV6IvToPFhwC2W30Jq44re_FQ1Ay2iYZXgNWIEP3-1aU785zGlAcMIAy4WG5AJUzIPsDzznXEJNOnpYeJBVu4yklwKswYzRpxb159W3I24DtQ9bGdv6QLEVXpYtForEmJXQfatAQDaDMJgBQq5UOadNWh6owxVHhisPqGZKxeUPNUvp8K6qesobK3ANTc3-UIVRL3s7VVwNGRPoPWDy_pie9aC4vKsxMo4Z61V74SeD-A8NgCXlnZYVd7ZK3mqusJ1s0OUY" 
               alt="Rahul Reddy profile"
               referrerPolicy="no-referrer"

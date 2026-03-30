@@ -29,7 +29,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <h3 className="text-white font-headline font-bold text-lg">P. Rahul Reddy — Resume</h3>
               <div className="flex items-center gap-3">
                 <a
-                  href="/resume.pdf"
+                  href={`${import.meta.env.BASE_URL}resume.pdf`}
                   download="P_Rahul_Reddy_Resume.pdf"
                   className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary hover:bg-primary hover:text-black transition-colors rounded-md font-bold text-sm"
                 >
@@ -48,7 +48,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             {/* PDF Viewer */}
             <div className="flex-1 w-full bg-slate-900 overflow-hidden relative">
               <iframe 
-                src="/resume.pdf#toolbar=0" 
+                src={`${import.meta.env.BASE_URL}resume.pdf#toolbar=0`} 
                 className="absolute inset-0 w-full h-full border-none"
                 title="Resume PDF Viewer"
               />
