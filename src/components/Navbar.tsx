@@ -42,8 +42,9 @@ export default function Navbar({ onOpenResume }: { onOpenResume: () => void }) {
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
     if (element) {
+      const topPos = element.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: topPos,
         behavior: 'smooth'
       });
       setIsOpen(false);
@@ -53,16 +54,26 @@ export default function Navbar({ onOpenResume }: { onOpenResume: () => void }) {
   return (
     <nav className="glass-nav fixed top-0 w-full z-50 border-b border-white/5 shadow-2xl">
       <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-        <a 
-          href="#" 
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="font-headline text-xl font-bold text-primary tracking-tighter"
-        >
-          P. Rahul Reddy
-        </a>
+        <div className="flex items-center gap-6">
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="font-headline text-xl font-bold text-primary tracking-tighter"
+          >
+            P. Rahul Reddy
+          </a>
+          
+          <div className="hidden lg:flex items-center gap-2 bg-[#1E293B] border border-white/10 px-3 py-1.5 rounded-full cursor-default select-none shadow-lg">
+             <div className="relative flex h-2 w-2">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+             </div>
+             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-300">Open to Opportunities</span>
+          </div>
+        </div>
         
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-8 items-center font-headline tracking-wider uppercase text-xs font-medium">

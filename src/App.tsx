@@ -11,18 +11,30 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import EducationCertifications from './components/EducationCertifications';
 import Contact from './components/Contact';
+import GithubStats from './components/GithubStats';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
 import { useState } from 'react';
 
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Mail } from 'lucide-react';
+import CustomCursor from './components/CustomCursor';
+import ScrollProgress from './components/ScrollProgress';
+import SplashScreen from './components/SplashScreen';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   return (
     <div className="min-h-screen relative">
+      <AnimatePresence>
+        {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      </AnimatePresence>
+      
+      <CustomCursor />
+      <ScrollProgress />
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
       <main>
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
@@ -31,6 +43,7 @@ export default function App() {
         <Projects />
         <Experience />
         <EducationCertifications />
+        <GithubStats />
         <Contact />
       </main>
       <Footer />
@@ -42,8 +55,10 @@ export default function App() {
         transition={{ delay: 1, type: 'spring' }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        href="mailto:rr0018619@gmail.com"
-        className="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-primary rounded-full flex items-center justify-center text-black shadow-[0_0_20px_rgba(34,197,94,0.4)] group"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=rr0018619@gmail.com"
+        className="fixed bottom-8 left-8 z-[100] w-14 h-14 bg-primary rounded-full flex items-center justify-center text-black shadow-[0_0_20px_rgba(34,197,94,0.4)] group"
         title="Let's connect"
       >
         <Mail className="w-6 h-6" />
@@ -53,6 +68,7 @@ export default function App() {
       </motion.a>
 
       <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
+      <ScrollToTop />
     </div>
   );
 }

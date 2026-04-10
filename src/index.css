@@ -4,7 +4,7 @@
 @theme {
   --font-headline: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
-  
+
   --color-primary: #22C55E;
   --color-background: #0F172A;
   --color-surface: #1E293B;
@@ -15,11 +15,25 @@
 }
 
 @layer base {
-  body {
+  html, body, #root {
     @apply bg-background text-on-background font-body antialiased selection:bg-primary/30 selection:text-primary;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  ::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-headline;
   }
 }
@@ -29,7 +43,7 @@
     position: relative;
     overflow: hidden;
   }
-  
+
   .vision-scan-line {
     background: linear-gradient(to bottom, transparent, #22C55E, transparent);
     height: 100px;
@@ -43,8 +57,13 @@
   }
 
   @keyframes vision-scan {
-    0% { top: -100px; }
-    100% { top: 100%; }
+    0% {
+      top: -100px;
+    }
+
+    100% {
+      top: 100%;
+    }
   }
 
   .hero-glow {
@@ -66,8 +85,51 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Marquee animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    display: inline-flex;
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(150px);
+      opacity: 0;
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import Tilt from 'react-parallax-tilt';
 
 export default function Experience() {
   const experiences = [
@@ -37,7 +38,7 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-32 px-6 bg-[#0F172A]" id="experience">
+    <section className="py-20 md:py-32 px-4 md:px-6 bg-[#0F172A]" id="experience">
       <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
         <div className="mb-20">
@@ -82,7 +83,7 @@ export default function Experience() {
               </div>
 
               {/* Experience Card */}
-              <div className="bg-[#1E293B] p-6 md:p-8 rounded-xl border-l-4 border-primary shadow-xl hover:shadow-primary/5 transition-all duration-300">
+              <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} perspective={1000} scale={1.01} transitionSpeed={2000} glareEnable={true} glareMaxOpacity={0.05} glareColor="#ffffff" glarePosition="all" className="bg-[#1E293B] p-6 md:p-8 rounded-xl border-l-4 border-primary shadow-xl hover:shadow-[0_0_30px_rgba(34,197,94,0.1)] transition-all duration-500 relative overflow-hidden">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${exp.logoColor}`}>
@@ -129,7 +130,7 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Tilt>
             </motion.div>
           ))}
         </div>
