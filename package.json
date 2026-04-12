@@ -11,7 +11,8 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "gh-pages-clean": "gh-pages-clean"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

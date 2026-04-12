@@ -51,6 +51,6 @@ npm run deploy
 ```
 
 ## Contact
-*   **LinkedIn**: [in/prahulredd](https://www.linkedin.com/in/prahulredd/)
+*   **LinkedIn**: [rahulreddypulicharla](https://www.linkedin.com/in/rahulreddypulicharla/)
 *   **Email**: [rr0018619@gmail.com](mailto:rr0018619@gmail.com)
 *   **GitHub**: [@PRAHULREDD](https://github.com/PRAHULREDD)
