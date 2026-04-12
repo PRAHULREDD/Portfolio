@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Github, Linkedin, Code2, Send } from 'lucide-react';
+import { Github, Linkedin, Code2, Send, CheckCircle2, Loader2 } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 
@@ -13,7 +13,7 @@ export default function Contact() {
     const formData = new FormData(event.currentTarget);
 
     // Using the user's Web3Forms access key
-    formData.append("access_key", "81825cc6-e229-4cbd-857b-0a7169469473");
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -122,14 +122,35 @@ export default function Contact() {
             <MagneticButton className="mt-2 w-full" intensity={20}>
               <motion.button 
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary text-black font-bold py-4 rounded-md flex justify-center items-center gap-2 hover:brightness-110 transition-all font-headline"
+                disabled={result === "Sending..." || result === "Message Sent Successfully!"}
+                whileHover={result ? {} : { scale: 1.02 }}
+                whileTap={result ? {} : { scale: 0.98 }}
+                className={`w-full font-bold py-4 rounded-md flex justify-center items-center gap-2 transition-all font-headline ${
+                  result === "Message Sent Successfully!"
+                    ? "bg-slate-800 text-primary border border-primary/20 cursor-default"
+                    : result === "Sending..."
+                    ? "bg-primary/50 text-black cursor-wait"
+                    : "bg-primary text-black hover:brightness-110"
+                }`}
               >
-                Send Message <Send className="w-4 h-4" />
+                {result === "Sending..." ? (
+                  <>
+                    Sending... <Loader2 className="w-4 h-4 animate-spin" />
+                  </>
+                ) : result === "Message Sent Successfully!" ? (
+                  <>
+                    Message Sent <CheckCircle2 className="w-4 h-4" />
+                  </>
+                ) : (
+                  <>
+                    Send Message <Send className="w-4 h-4" />
+                  </>
+                )}
               </motion.button>
             </MagneticButton>
-            <span className={`text-sm text-center font-medium mt-2 ${result.includes("Success") ? "text-primary" : "text-yellow-500"}`}>{result}</span>
+            {result && result !== "Sending..." && result !== "Message Sent Successfully!" && (
+              <span className="text-sm text-center font-medium mt-2 text-yellow-500">{result}</span>
+            )}
           </form>
         </motion.div>
       </div>

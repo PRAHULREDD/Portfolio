@@ -11,7 +11,6 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import EducationCertifications from './components/EducationCertifications';
 import Contact from './components/Contact';
-import GithubStats from './components/GithubStats';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
 import { useState } from 'react';
@@ -39,11 +38,10 @@ export default function App() {
       <main>
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <About />
-        <Skills />
-        <Projects />
         <Experience />
+        <Projects />
+        <Skills />
         <EducationCertifications />
-        <GithubStats />
         <Contact />
       </main>
       <Footer />

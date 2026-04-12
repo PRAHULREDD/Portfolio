@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Download } from 'lucide-react';
+import { X, Download, ExternalLink } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -37,7 +37,16 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </div>
                 <h3 className="text-white font-headline font-bold tracking-wider text-sm">P_RAHUL_REDDY_RESUME.PDF</h3>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 md:gap-4">
+                <a
+                  href={`${import.meta.env.BASE_URL}resume.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:flex items-center gap-2 px-4 py-2 border border-white/20 text-white hover:border-primary hover:text-primary transition-all rounded-md font-bold text-xs uppercase tracking-widest"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Open
+                </a>
                 <a
                   href={`${import.meta.env.BASE_URL}resume.pdf?v=2`}
                   download="P_Rahul_Reddy_Resume.pdf"

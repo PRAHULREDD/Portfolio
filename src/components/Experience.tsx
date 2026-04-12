@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import Tilt from 'react-parallax-tilt';
+import { Database, Cpu, Activity, TrendingUp } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
@@ -119,6 +120,100 @@ export default function Experience() {
                         <div className="text-primary font-bold text-sm">{metric.label}</div>
                       </div>
                     ))}
+                  </div>
+                )}
+                
+                {/* RealMeds ETL Pipeline visualizer */}
+                {exp.company.includes('RealMeds') && (
+                  <div className="mb-8 p-4 bg-[#0F172A]/50 rounded-lg border border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 py-6 px-8 relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    <div className="flex flex-col items-center gap-3 relative z-10">
+                      <div className="w-14 h-14 rounded-full bg-[#1E293B] border border-teal-500/30 flex items-center justify-center text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.15)] group-hover:border-teal-400 transition-colors duration-500">
+                        <Database className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-bold">Extract</span>
+                    </div>
+                    
+                    <div className="flex-[0] md:flex-1 w-px h-8 md:w-auto md:h-px bg-gradient-to-b md:bg-gradient-to-r from-teal-500/10 via-teal-500/50 to-teal-500/10 relative z-10 my-1 md:my-0">
+                       <div className="absolute top-0 md:top-1/2 left-1/2 md:left-0 -translate-x-1/2 md:-translate-x-0 md:-translate-y-1/2 w-2 h-2 rounded-full bg-teal-400 animate-[shimmer_2s_infinite] shadow-[0_0_8px_#2dd4bf]" />
+                    </div>
+                    
+                    <div className="flex flex-col items-center gap-3 relative z-10">
+                      <div className="w-14 h-14 rounded-full bg-[#1E293B] border border-teal-500/30 flex items-center justify-center text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.15)] group-hover:border-teal-400 transition-colors duration-500">
+                        <Cpu className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-bold">Process (EDA)</span>
+                    </div>
+                    
+                    <div className="flex-[0] md:flex-1 w-px h-8 md:w-auto md:h-px bg-gradient-to-b md:bg-gradient-to-r from-teal-500/10 via-teal-500/50 to-teal-500/10 relative z-10 my-1 md:my-0">
+                       <div className="absolute top-0 md:top-1/2 left-1/2 md:left-0 -translate-x-1/2 md:-translate-x-0 md:-translate-y-1/2 w-2 h-2 rounded-full bg-teal-400 animate-[shimmer_2s_infinite_0.7s] shadow-[0_0_8px_#2dd4bf]" />
+                    </div>
+                    
+                    <div className="flex flex-col items-center gap-3 relative z-10">
+                      <div className="w-14 h-14 rounded-full bg-[#1E293B] border border-teal-500/30 flex items-center justify-center text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.15)] group-hover:border-teal-400 transition-colors duration-500">
+                        <Activity className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-bold">Train</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Pipra Solutions Accuracy Chart visualizer */}
+                {exp.company.includes('Pipra') && (
+                  <div className="mb-8 p-6 bg-[#0F172A]/50 rounded-lg border border-white/5 relative overflow-hidden group">
+                     <div className="flex justify-between items-center text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-6 border-b border-white/5 pb-2">
+                       <span className="flex items-center gap-2"><TrendingUp className="w-3 h-3 text-primary" /> Accuracy Migration</span>
+                       <span className="text-primary font-bold bg-primary/10 px-2 py-1 rounded">+25% Increase in Live Env</span>
+                     </div>
+                     <div className="flex items-end gap-6 md:gap-16 h-32 pl-4 pr-6 md:pr-12 pb-6 border-b border-l border-white/10 relative w-full max-w-sm mx-auto">
+                       
+                       {/* Chart Y-Axis Labels */}
+                       <div className="absolute left-[-2rem] bottom-0 w-6 flex flex-col justify-between h-full items-end text-[9px] text-slate-600 font-mono pb-4">
+                         <span>100%</span>
+                         <span>50%</span>
+                         <span>0%</span>
+                       </div>
+
+                       {/* Chart Bars */}
+                       <div className="flex-1 flex flex-col justify-end items-center relative h-full">
+                         <div className="w-full max-w-[60px] bg-[#1E293B] border border-white/10 rounded-t-md h-[40%] transition-all duration-500 hover:bg-slate-700/50 hover:border-slate-500 relative flex justify-center z-10">
+                           <span className="absolute -top-6 text-xs text-slate-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity">70%</span>
+                         </div>
+                         <span className="absolute -bottom-6 text-[10px] text-slate-500 font-mono whitespace-nowrap">Haar Cascades</span>
+                       </div>
+                       
+                       <div className="flex-1 flex flex-col justify-end items-center relative h-full">
+                         <div className="w-full max-w-[60px] bg-primary/20 border border-primary/50 rounded-t-md h-[85%] relative overflow-hidden group-hover:bg-primary/30 group-hover:border-primary transition-all duration-500 flex justify-center shadow-[0_0_20px_rgba(34,197,94,0.15)] z-10">
+                           <div className="absolute inset-x-0 bottom-0 top-0 bg-gradient-to-t from-transparent to-primary/20 animate-pulse" />
+                           <span className="absolute -top-6 text-xs text-primary font-bold opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md">93%</span>
+                         </div>
+                         <span className="absolute -bottom-6 text-[10px] text-primary font-mono font-bold whitespace-nowrap">MTCNN+FaceNet</span>
+                       </div>
+                       
+                       {/* Ascending Trend Line connecting top of bars */}
+                       <svg className="absolute inset-0 w-full h-full pointer-events-none z-20" preserveAspectRatio="none">
+                         <motion.path 
+                           initial={{ pathLength: 0, opacity: 0 }}
+                           whileInView={{ pathLength: 1, opacity: 1 }}
+                           viewport={{ once: true }}
+                           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+                           d="M 25% 60% L 75% 15%" 
+                           stroke="#22C55E" 
+                           strokeWidth="2" 
+                           strokeDasharray="4 4"
+                           fill="none" 
+                         />
+                         {/* Glowing dot at the end */}
+                         <motion.circle
+                           initial={{ opacity: 0 }}
+                           whileInView={{ opacity: 1 }}
+                           viewport={{ once: true }}
+                           transition={{ delay: 2 }}
+                           cx="75%" cy="15%" r="3" fill="#22C55E" className="animate-ping shadow-[0_0_10px_#22C55E]"
+                         />
+                       </svg>
+                     </div>
                   </div>
                 )}
 
