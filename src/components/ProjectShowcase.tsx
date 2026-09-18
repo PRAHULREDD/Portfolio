@@ -313,9 +313,9 @@ function ShowcaseContent({ progress }: { progress: MotionValue<number> }) {
                 <div className="inline-flex items-center gap-2 text-micro font-mono text-primary bg-primary/10 px-3.5 py-1.5 rounded-full border border-primary/30 font-bold tracking-widest mb-2">
                   <Activity className="w-3.5 h-3.5 animate-pulse" /> COMPUTE DATA BUS // PIPELINE FLOW
                 </div>
-                <h4 className="text-2xl md:text-3xl font-headline font-bold text-text-primary">
+                <p className="text-2xl md:text-3xl font-headline font-bold text-text-primary">
                   Inference Architecture
-                </h4>
+                </p>
               </div>
 
               {/* Pipeline Energy Channel Track */}
@@ -376,9 +376,9 @@ function ShowcaseContent({ progress }: { progress: MotionValue<number> }) {
                 <ShieldCheck className="w-3.5 h-3.5 text-primary" /> EMPIRICAL PROOF & MITIGATION
               </div>
 
-              <h4 className="text-2xl md:text-3xl font-headline font-black text-text-primary mb-2">
+              <p className="text-2xl md:text-3xl font-headline font-black text-text-primary mb-2">
                 Engineering Evidence & Telemetry
-              </h4>
+              </p>
               <p className="text-sm text-text-secondary max-w-xl mx-auto mb-8">
                 Mitigating severe class imbalance without false positive degradation.
               </p>
@@ -627,9 +627,9 @@ function FallbackStatic() {
             <div className="text-micro font-mono text-primary font-bold tracking-widest uppercase mb-1">
               PIPELINE CHOREOGRAPHY // 5 STAGES
             </div>
-            <h4 className="text-2xl font-bold font-headline text-text-primary mb-2">
+            <p className="text-2xl font-bold font-headline text-text-primary mb-2">
               End-to-End Production ML Data Bus
-            </h4>
+            </p>
             <p className="text-sm text-text-secondary max-w-xl mx-auto">
               Raw postings ingested, synthetically balanced, classified via dual hyperplane, and served via FastAPI
             </p>
@@ -664,9 +664,9 @@ function FallbackStatic() {
             <div className="text-micro font-mono text-primary font-bold tracking-widest uppercase mb-1">
               METHODOLOGY & RIGOR // TELEMETRY PROOF
             </div>
-            <h4 className="text-2xl font-bold font-headline text-text-primary mb-2">
+            <p className="text-2xl font-bold font-headline text-text-primary mb-2">
               Solving Extreme Class Imbalance (&lt;5% Fraud)
-            </h4>
+            </p>
             <p className="text-sm text-text-secondary max-w-xl mx-auto">
               Empirical benchmarks across real-world recruitment datasets
             </p>

@@ -31,7 +31,7 @@ export default function Footer({ onOpenResume }: { onOpenResume: () => void }) {
 
           {/* Center - Quick Links */}
           <div>
-            <h4 className="text-caption text-text-tertiary font-mono mb-4">QUICK NAVIGATION</h4>
+            <p className="text-caption text-text-tertiary font-mono mb-4">QUICK NAVIGATION</p>
             <div className="flex flex-col gap-2.5">
               <a href="#projects" className="text-sm text-text-secondary hover:text-primary transition-colors w-fit">
                 Projects
@@ -56,7 +56,7 @@ export default function Footer({ onOpenResume }: { onOpenResume: () => void }) {
 
           {/* Right - Social */}
           <div>
-            <h4 className="text-caption text-text-tertiary font-mono mb-4">CONNECT</h4>
+            <p className="text-caption text-text-tertiary font-mono mb-4">CONNECT</p>
             <div className="flex gap-3">
               <MagneticButton intensity={30}>
                 <a

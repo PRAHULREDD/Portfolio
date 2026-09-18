@@ -55,7 +55,7 @@ export default function SectionNavDots() {
           <button
             key={section.id}
             onClick={() => scrollTo(section.id)}
-            aria-label={`Scroll to ${section.label}`}
+            aria-label={section.label}
             aria-current={isActive ? 'location' : undefined}
             className="group relative flex items-center justify-center p-1 cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
