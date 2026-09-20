@@ -146,19 +146,16 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
           <p className="text-subsection font-headline bg-gradient-to-r from-primary via-primary-hover to-secondary bg-clip-text text-transparent font-extrabold tracking-tight">
             AI / ML & Computer Vision Engineer
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-2 text-micro font-mono text-text-tertiary">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-micro font-mono text-text-tertiary">
             <span className="px-2.5 py-1 rounded-md bg-surface-raised border border-border/80 text-text-secondary">
               HAILO-8L NPU (13 TOPS)
             </span>
-            <span>•</span>
             <span className="px-2.5 py-1 rounded-md bg-surface-raised border border-border/80 text-text-secondary">
               YOLOv8 + FACENET
             </span>
-            <span>•</span>
             <span className="px-2.5 py-1 rounded-md bg-surface-raised border border-border/80 text-text-secondary">
               INT8 QUANTIZATION
             </span>
-            <span>•</span>
             <span className="px-2.5 py-1 rounded-md bg-surface-raised border border-border/80 text-text-secondary">
               FASTAPI ML SERVING
             </span>
